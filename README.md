@@ -3,6 +3,8 @@
 
 ## Setup environment
 ```
+-m pip install
+--upgrade pip
 pip install python
 upgrade pip' command
 python --version
