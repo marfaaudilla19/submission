@@ -25,10 +25,10 @@ st.markdown(
 )
 
 # Membuat tab untuk subheader
-selected_tab = st.sidebar.radio("Pilih Menu", ["Hubungan", "Hari", "Musim","Jumlah Sepeda"])
+selected_tab = st.sidebar.radio("Pilih Menu", ["Hari", "Bulan", "Musim", "Jumlah Sepeda"])
 
-if selected_tab == "Hubungan":
-    st.subheader("Hubungan")
+if selected_tab == "Hari":
+    st.subheader("Hari")
 
     # Membuat matriks korelasi
     corr_matrix = day_df.corr()
@@ -39,9 +39,9 @@ if selected_tab == "Hubungan":
     plt.title('Matriks Korelasi antara Variabel pada Dataset Bike Sharing System')
     plt.show()
 
-# Tab "Jumlah Sepeda"
-elif selected_tab == "Jumlah Sepeda":
-    st.subheader("Jumlah Sepeda")
+# Tab "Musim"
+elif selected_tab == "Bulan":
+    st.subheader("Bulan")
 
     # Mengelompokkan data berdasarkan bulan dan menghitung total sepeda yang dipinjam
     monthly_rentals = day_df.groupby('mnth')['cnt'].sum()
@@ -56,6 +56,9 @@ elif selected_tab == "Jumlah Sepeda":
     plt.grid(True)
     plt.show()
 
+elif selected_tab == "Musim":
+    st.subheader("Musim")
+
     # Mengelompokkan data berdasarkan musim dan menghitung total sepeda yang dipinjam
     season_rentals = day_df.groupby('season')['cnt'].sum()
 
@@ -69,6 +72,8 @@ elif selected_tab == "Jumlah Sepeda":
     plt.grid(True)
     plt.show()
 
+elif selected_tab == "Jumlah Sepeda":
+    st.subheader("Jumlah Sepeda")
     # Mengelompokkan data berdasarkan jenis hari (hari kerja/hari libur) dan menghitung total sepeda yang dipinjam
     rentals_by_holiday = day_df.groupby('holiday')['cnt'].sum()
 
