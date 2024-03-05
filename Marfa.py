@@ -30,14 +30,16 @@ selected_tab = st.sidebar.radio("Pilih Menu", ["Hari", "Bulan", "Musim", "Jumlah
 if selected_tab == "Hari":
     st.subheader("Hari")
 
-    # Membuat matriks korelasi
-    corr_matrix = day_df.corr()
+# Mengelompokkan data berdasarkan jenis hari (hari kerja/hari libur) dan menghitung total sepeda yang dipinjam
+rentals_by_holiday = day_df.groupby('holiday')['cnt'].sum()
 
-    # Visualisasi matriks korelasi menggunakan heatmap
-    plt.figure(figsize=(10, 8))
-    sns.heatmap(corr_matrix, annot=True, cmap='coolwarm', fmt=".2f")
-    plt.title('Matriks Korelasi antara Variabel pada Dataset Bike Sharing System')
-    plt.show()
+# Visualisasi
+plt.figure(figsize=(8, 6))
+colors = ['lightgreen', 'skyblue']
+plt.pie(rentals_by_holiday, labels=['Hari Kerja', 'Hari Libur'], colors=colors, autopct='%1.1f%%', startangle=140)
+plt.title('Persentase Peminjaman Sepeda pada Hari Kerja dan Hari Libur')
+plt.axis('equal')  # Agar pie chart terlihat bulat
+plt.show()
 
 # Tab "Musim"
 elif selected_tab == "Bulan":
