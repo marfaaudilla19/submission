@@ -28,7 +28,7 @@ st.markdown(
 selected_tab = st.sidebar.radio("Pilih Menu", ["Hari", "Bulan", "Musim", "Cuaca"])
 
 if selected_tab == "Hari":
-        st.subheader("Hari")
+    st.subheader("Hari")
 
     # Mengelompokkan data berdasarkan jenis hari (hari kerja/hari libur) dan menghitung total sepeda yang dipinjam
     rentals_by_holiday = dayy_df.groupby('holiday_x')['cnt_x'].sum()
