@@ -4,6 +4,8 @@ import seaborn as sns
 import streamlit as st
 
 sns.set(style='whitegrid')
+# Menonaktifkan peringatan PyplotGlobalUseWarning
+st.set_option('deprecation.showPyplotGlobalUse', False)
 
 # Set tema Streamlit
 st.set_page_config(
@@ -41,6 +43,7 @@ if selected_tab == "Hari":
     plt.axis('equal')  # Agar pie chart terlihat bulat
 
     # Menampilkan plot menggunakan st.pyplot()
+    
     st.pyplot()
 
 # Tab "Musim"
