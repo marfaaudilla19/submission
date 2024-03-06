@@ -40,7 +40,8 @@ if selected_tab == "Hari":
     plt.title('Persentase Peminjaman Sepeda pada Hari Kerja dan Hari Libur')
     plt.axis('equal')  # Agar pie chart terlihat bulat
 
-    plt.show()
+    # Menampilkan plot menggunakan st.pyplot()
+    st.pyplot()
 
 # Tab "Musim"
 elif selected_tab == "Bulan":
@@ -58,7 +59,8 @@ elif selected_tab == "Bulan":
     plt.xticks(range(1, 13), ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'])
     plt.grid(True)
 
-    plt.show()
+    # Menampilkan plot menggunakan st.pyplot()
+    st.pyplot()
 
 elif selected_tab == "Musim":
     st.subheader("Musim")
@@ -75,7 +77,8 @@ elif selected_tab == "Musim":
     plt.xticks(range(1, 5), ['Semi', 'Panas','Gugur','Dingin'])
     plt.grid(True)
 
-    plt.show()
+    # Menampilkan plot menggunakan st.pyplot()
+    st.pyplot()
 
 elif selected_tab == "Cuaca":
     st.subheader("Cuaca")
@@ -92,7 +95,7 @@ elif selected_tab == "Cuaca":
     plt.xticks([0, 1, 2], ['Cerah/Mendung', 'Kabut/Kabut Berawan', 'Hujan/Salju'], rotation=45)
     plt.grid(axis='y')
 
-    plt.show()
-
+    # Menampilkan plot menggunakan st.pyplot()
+    st.pyplot()
 
 st.caption("Copyright by MarfaAudilla")
