@@ -3,7 +3,6 @@
 
 ## Setup environment
 ```
-pip install --upgrade pip
 pip install python
 python --version
 pip install numpy pandas scipy matplotlib seaborn streamlit
@@ -13,3 +12,4 @@ pip install numpy pandas scipy matplotlib seaborn streamlit
 ```
 streamlit run Marfa.py
 ```
+
